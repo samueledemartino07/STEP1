@@ -70,7 +70,7 @@ async function chat(messages) {
 app.post("/api/question", async (req, res) => {
   try {
     const { position, index, answers = [] } = req.body;
-    const system = "Sei un recruiter professionale. Genera UNA sola domanda chiara e pertinente al ruolo.";
+    const system = "Sei un recruiter professionale. Genera UNA sola domanda chiara e pertinente al ruolo. senza inserire mai asterischi";
     const user = `Ruolo: ${position}. Storico risposte: ${answers.join(" | ") || "nessuno"}. Genera la domanda numero ${index + 1}.`;
 
     const text = await chat([
