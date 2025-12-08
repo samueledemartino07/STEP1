@@ -47,7 +47,7 @@ async function chat(messages) {
     const response = await ai.models.generateContent({
       // CONSIGLIO: Usa 'gemini-1.5-flash' per massima stabilità in produzione.
       // Se vuoi provare il 2.0, assicurati che la tua chiave abbia accesso alla beta.
-      model: "gemini-1.5-flash", 
+      model: "gemini-2.5-flash", 
       config: {
         systemInstruction: systemInstruction,
         temperature: 1,
