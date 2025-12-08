@@ -105,9 +105,9 @@ app.post("/api/reply", async (req, res) => {
 });
 
 // Route di fallback: se l'utente aggiorna la pagina o va su un URL strano, rimandalo alla home
-//app.get('*', (req, res) => {
-//    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-//});
+app.get('/params', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(port, () => {
   console.log(`✅ Server avviato sulla porta ${port}`);
