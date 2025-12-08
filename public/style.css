@@ -68,8 +68,8 @@ body {
 }
 
 .logo img {
-    /* Correzioni Logo in base all'HTML */
-    height: 100px;
+    /* MODIFICA APPORTATA QUI: Aumento dimensione logo */
+    height: 120px; 
     width: auto;
     object-fit: contain;
     background: none;
