@@ -105,7 +105,7 @@ app.post("/api/reply", async (req, res) => {
 });
 
 // Route di fallback: se l'utente aggiorna la pagina o va su un URL strano, rimandalo alla home
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
