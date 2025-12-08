@@ -1,0 +1,26 @@
+{
+  "name": "step",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.1",
+    "@google/genai": "^1.31.0",
+    "@google/generative-ai": "^0.24.1",
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "git": "^0.1.5",
+    "groq-sdk": "^0.37.0",
+    "openai": "^6.10.0"
+  }
+}

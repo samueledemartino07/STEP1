@@ -1,0 +1,9 @@
+# Dipendenze Node
+/node_modules
+
+# Variabili d'ambiente (segreti)
+.env
+
+# Log e Cache (opzionale)
+*.log
+npm-debug.log*
