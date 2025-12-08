@@ -140,13 +140,18 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-.input-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+/* MODIFICA EFFETTUATA QUI: Rimuove la griglia e usa Flexbox */
+.input-row { 
+    display: flex; 
+    gap: 8px; 
+}
 #chat-input {
     padding: 10px 12px;
     border-radius: 10px;
     border: 1px solid var(--border);
     background: #0f1422;
     color: var(--text);
+    flex-grow: 1; /* MODIFICA AGGIUNTA: Forziamo l'input a espandersi */
 }
 #send-btn, #new-q-btn {
     padding: 10px 12px;
@@ -197,8 +202,10 @@ body {
 
 /* Video */
 .video-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* MODIFICHE EFFETTUATE QUI PER IMPILARE I VIDEO */
+    display: flex; 
+    flex-direction: column; /* I video saranno uno sotto l'altro */
+    /* FINE MODIFICHE */
     gap: 20px;
     margin-top: 20px;
 }
@@ -207,6 +214,8 @@ body {
     border: 1px solid #243049;
     border-radius: 10px;
     padding: 15px;
+    /* Opzionale: per assicurare che il video occupi tutta la larghezza del contenitore padre */
+    max-width: 560px; 
 }
 .video-item h2 {
     margin-top: 0;
