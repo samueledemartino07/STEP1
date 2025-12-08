@@ -1,204 +1,202 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STEP – Simulatore di Colloquio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STEP – Simulatore di Colloquio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-  <!-- Schermata iniziale -->
-  <section id="start-screen" class="view">
-    <h1>Simulatore di Colloquio</h1>
-    <p>Inserisci la posizione per cui vuoi fare il colloquio:</p>
-    <div class="position-input">
-      <input
-        type="text"
-        id="position"
-        placeholder="Es. Sviluppatore Python, Cameriere, Amministrativo..."
-        autocomplete="off"
-      />
-      <button id="startBtn">Inizia colloquio</button>
-    </div>
-    <p>Step è una piattaforma pensata per accompagnarti, passo dopo passo, verso il mondo del lavoro.
- In alto a destra trovi tre sezioni principali, ognuna dedicata a un aspetto diverso del tuo percorso. 
+    <section id="start-screen" class="view">
+    <h1>Simulatore di Colloquio</h1>
+    <p>Inserisci la posizione per cui vuoi fare il colloquio:</p>
+    <div class="position-input">
+      <input
+        type="text"
+        id="position"
+        placeholder="Es. Sviluppatore Python, Cameriere, Amministrativo..."
+        autocomplete="off"
+      />
+      <button id="startBtn">Inizia colloquio</button>
+    </div>
+    <p>Step è una piattaforma pensata per accompagnarti, passo dopo passo, verso il mondo del lavoro.
+ In alto a destra trovi tre sezioni principali, ognuna dedicata a un aspetto diverso del tuo percorso. 
 La prima è una simulazione di ordine di lavoro: un chatbot intelligente ti farà domande, ti guiderà nelle scelte e ti metterà alla prova come se fossi davvero in azienda. Un modo semplice e coinvolgente per capire come affrontare attività reali, senza stress e con la libertà di sbagliare.
 La seconda sezione ti offre una serie di videolezioni pratiche, perfette per imparare nuove competenze in modo leggero. Immagina mini-episodi, spiegati bene e senza parole difficili, che ti insegnano quello che serve davvero – da trucchi utili a strumenti che potrai usare subito.
 Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il tuo curriculum. Qui trovi spiegazioni chiare, suggerimenti e modelli per costruire un CV che ti rappresenti al meglio e sappia catturare l’attenzione di chi lo leggerà.
 </p>
-  </section>
+  </section>
 
-  <!-- Contenuto principale -->
-  <div id="main-app" hidden>
-    <header class="app-header">
-      <div class="header-bar">
-        <div class="logo">
-          <img src="C:\Users\admin\STEP\assets\logo.png" alt="Logo STEP" />
-        </div>
-        <nav class="nav">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#chat" class="nav-link">Colloquio</a>
-          <a href="#video" class="nav-link">Videolezioni</a>
-          <a href="#note" class="nav-link">Curriculum Vitae</a>
-        </nav>
-      </div>
-    </header>
+    <div id="main-app" hidden>
+    <header class="app-header">
+      <div class="header-bar">
+        <div class="logo">
+          <img src="C:\Users\admin\STEP\assets\logo.png" alt="Logo STEP" />
+        </div>
+        <nav class="nav">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#chat" class="nav-link">Colloquio</a>
+          <a href="#video" class="nav-link">Videolezioni</a>
+          <a href="#note" class="nav-link">Curriculum Vitae</a>
+        </nav>
+      </div>
+    </header>
 
-    <main id="app">
-      <!-- Home -->
-      <section id="home" class="view">
-        <h1>Benvenuto su STEP!</h1>
-        <p id="home-text">
-          Qui comparirà la posizione scelta per il colloquio.
-        </p>
-        
-      </section>
+    <main id="app">
+            <section id="home" class="view">
+        <h1>Benvenuto su STEP!</h1>
+        <p id="home-text">
+          Qui comparirà la posizione scelta per il colloquio.
+        </p>
+        
+      </section>
 
-      <!-- Chat -->
-      <section id="chat" class="view" hidden>
-        <h1>Simulazione di un colloquio</h1>
-        <div class="chat-box">
-          <div id="chat-messages" class="messages"></div>
-          <div class="input-row">
-            <input id="chat-input" type="text" placeholder="Scrivi la tua risposta..." />
-            <button id="send-btn">Invia</button>
-          </div>
-          <div class="controls">
-            
-            <button id="reset-btn-chat" onclick="document.getElementById('reset-btn').click()">Reset</button>
-          </div>
-        </div>
-      </section>
+            <section id="chat" class="view" hidden>
+        <h1>Simulazione di un colloquio</h1>
+        <div class="chat-box">
+          <div id="chat-messages" class="messages"></div>
+          <div class="input-row">
+            <input id="chat-input" type="text" placeholder="Scrivi la tua risposta..." />
+            <button id="send-btn">Invia</button>
+          </div>
+          <div class="controls">
+            
+            <button id="reset-btn-chat" onclick="document.getElementById('reset-btn').click()">Reset</button>
+          </div>
+        </div>
+      </section>
 
-      <!-- Video -->
- <section id="video" class="view" hidden>
-  <h1>Videolezioni</h1>
-  <p>Seleziona e guarda i video disponibili:</p>
+       <section id="video" class="view" hidden>
+  <h1>Videolezioni</h1>
+  <p>Seleziona e guarda i video disponibili:</p>
 
-  <div class="video-gallery">
-    <!-- Video YouTube -->
-    <div class="video-item">
-      <h2>Lezione 1</h2>
-      <iframe
-        url="https://www.youtube.com/watch?v=5KIl4bpaDBM" 
-        title="Video YouTube"
-        width="560"
-        height="315"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <h2>Lezione 2</h2>
-      <iframe
-        url="https://www.youtube.com/watch?v=5KIl4bpaDBM" 
-        title="Video YouTube"
-        width="560"
-        height="315"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <h2>Lezione 3</h2>
-      <iframe
-        url="https://www.youtube.com/watch?v=5KIl4bpaDBM" 
-        title="Video YouTube"
-        width="560"
-        height="315"
-        allowfullscreen
-      ></iframe>
-  </div>
-  </div>
+  <div class="video-gallery">
+        <div class="video-item">
+      <h2>Lezione 1</h2>
+      <iframe
+        src="https://www.youtube.com/embed/5KIl4bpaDBM" 
+        title="Video YouTube"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="video-item">
+      <h2>Lezione 2</h2>
+      <iframe
+        src="https://www.youtube.com/embed/5KIl4bpaDBM" 
+        title="Video YouTube"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="video-item">
+      <h2>Lezione 3</h2>
+      <iframe
+        src="https://www.youtube.com/embed/5KIl4bpaDBM" 
+        title="Video YouTube"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
 </section>
 
+            <section id="note" class="view" hidden>
+        <h1>Come comporre il tuo Curriculum Vitae</h1>
+        <p>In questa sezione verrai guidato step by step nella creazione del tuo primo curriculum.</p>
+        <h2>1. Intestazione e dati personali</h2>
+        <ul>
+          <li>Nome e cognome</li>
+          <li>Telefono</li>
+          <li>Email professionale (es.: nome.cognome@…)</li>
+          <li>Città</li>
+          <li>Linkedin/portfolio (se li hai)</li>
+        </ul>
+        <h2>2. Profilo personale (breve)</h2>
+        <p>3-4 Righe per descrivere te e il tuo background</p>
+        <ul>
+          <li>Chi sei</li>
+          <li>Cosa sai fare</li>
+          <li>Obiettivi</li>
+        </ul>
+        <h2>3. Esperienze lavorative (se le hai)</h2>
+        <p>Ordine inverso (dalla più recente).
+          Per ogni esperienza:
+        </p>
+        <ul>
+          <li>Titolo della posizione</li>
+          <li>Nome dell'azienda</li>
+          <li>Durata del lavoro</li>
+          <li>Breve descrizione concreta in punti di quello che hai fatto</li>
+        </ul>
+         <h2>4. Formazione</h2>
+        <p>Scuola o università, dalla più recente.
+          Comprende:
+        </p>
+        <ul>
+          <li>Titolo (diploma, laurea)</li>
+          <li>Istituto</li>
+          <li>Data di conseguimento o prevista</li>
+          <li>Valutazione (opzionale)</li>
+          <li>Principali esami o corsi (se presenti)</li>
+        </ul>
+         <h2>6. Soft Skills</h2>
+        <ul>
+          <li>Problem solving</li>
+          <li>Comunicazione</li>
+          <li>Lavoro in team</li>
+          <li>Gestione del tempo</li>
+        </ul>
+        <h2>7. Lingue</h2>
+        <ul>
+          <li>Italiano: madrelingua</li>
+          <li>Inglese: B2 (intermedio)</li>
+          <li>Spagnolo: A2 (base)</li>
+          
+        </ul>
+        <h2>8. Certificazioni / Corsi (facoltativo)</h2>
+        <ul>
+          <li>ECDL</li>
+          <li>First Certificate</li>
+          <li>Corso di Excel</li>
+        </ul>
+         <h2>9. Progetti personali (super consigliato se sei giovane)</h2>
+        <p>Esempio:
+        </p>
+        <ul>
+          <li>Creazione sito web personale</li>
+          <li>Realizzazione video promozionale</li>
+          <li>App in Python</li>
+        </ul>
+        <h2>10. Interessi (facoltativo)</h2>
+        <p>Metti solo cose che ti caratterizzano o rilevanti. 
+          Esempio:
+        </p>
+        <ul>
+          <li>Sport di squadra</li>
+          <li>Volontariato</li>
+          <li>Fotografia</li>
+          <li>Lettura</li>
+        </ul>
+        
+      </section>
+    </main>
 
+    <footer class="app-footer">
+      <small>© 2025 STEP</small>
+    </footer>
+  </div>
 
-      <!-- Note -->
-      <section id="note" class="view" hidden>
-        <h1>Come comporre il tuo Curriculum Vitae</h1>
-        <p>In questa sezione verrai guidato step by step nella creazione del tuo primo curriculum.</p>
-        <h2>1. Intestazione e dati personali</h2>
-        <ul>
-          <li>Nome e cognome</li>
-          <li>Telefono</li>
-          <li>Email professionale (es.: nome.cognome@…)</li>
-          <li>Città</li>
-          <li>Linkedin/portfolio (se li hai)</li>
-        </ul>
-        <h2>2. Profilo personale (breve)</h2>
-        <p>3-4 Righe per descrivere te e il tuo background</p>
-        <ul>
-          <li>Chi sei</li>
-          <li>Cosa sai fare</li>
-          <li>Obiettivi</li>
-        </ul>
-        <h2>3. Esperienze lavorative (se le hai)</h2>
-        <p>Ordine inverso (dalla più recente).
-          Per ogni esperienza:
-        </p>
-        <ul>
-          <li>Titolo della posizione</li>
-          <li>Nome dell'azienda</li>
-          <li>Durata del lavoro</li>
-          <li>Breve descrizione concreta in punti di quello che hai fatto</li>
-        </ul>
-         <h2>4. Formazione</h2>
-        <p>Scuola o università, dalla più recente.
-          Comprende:
-        </p>
-        <ul>
-          <li>Titolo (diploma, laurea)</li>
-          <li>Istituto</li>
-          <li>Data di conseguimento o prevista</li>
-          <li>Valutazione (opzionale)</li>
-          <li>Principali esami o corsi (se presenti)</li>
-        </ul>
-         <h2>6. Soft Skills</h2>
-        <ul>
-          <li>Problem solving</li>
-          <li>Comunicazione</li>
-          <li>Lavoro in team</li>
-          <li>Gestione del tempo</li>
-        </ul>
-        <h2>7. Lingue</h2>
-        <ul>
-          <li>Italiano: madrelingua</li>
-          <li>Inglese: B2 (intermedio)</li>
-          <li>Spagnolo: A2 (base)</li>
-          
-        </ul>
-        <h2>8. Certificazioni / Corsi (facoltativo)</h2>
-        <ul>
-          <li>ECDL</li>
-          <li>First Certificate</li>
-          <li>Corso di Excel</li>
-        </ul>
-         <h2>9. Progetti personali (super consigliato se sei giovane)</h2>
-        <p>Esempio:
-        </p>
-        <ul>
-          <li>Creazione sito web personale</li>
-          <li>Realizzazione video promozionale</li>
-          <li>App in Python</li>
-        </ul>
-        <h2>10. Interessi (facoltativo)</h2>
-        <p>Metti solo cose che ti caratterizzano o rilevanti. 
-          Esempio:
-        </p>
-        <ul>
-          <li>Sport di squadra</li>
-          <li>Volontariato</li>
-          <li>Fotografia</li>
-          <li>Lettura</li>
-        </ul>
-        
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <small>© 2025 STEP</small>
-    </footer>
-  </div>
-
-  <!-- Script applicativo -->
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
