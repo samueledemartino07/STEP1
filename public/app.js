@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Prima risposta: avvio colloquio
       if (!interviewStarted) {
-        if (userAnswer.toLowerCase().includes("si")) {
+        if (userAnswer.toLowerCase().includes("yes")) {
           interviewStarted = true;
           questionIndex = 0;
           addMessage("bot", "Ok, let's start!");
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         questionIndex++;
         await getQuestion();
       } else {
-        addMessage("bot", "Write 'yes' whe you are ready!.");
+        addMessage("bot", "Write 'yes' when you are ready!.");
       }
     });
   }
