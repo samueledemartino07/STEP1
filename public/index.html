@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STEP – Simulatore di Colloquio</title>
+  <title>STEP – Interview simulator</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
     <section id="start-screen" class="view">
-    <h1>Simulatore di Colloquio</h1>
-    <p>Inserisci la posizione per cui vuoi fare il colloquio:</p>
+    <h1>Interview simulator</h1>
+    <p>Enter the job you want to interview for:</p>
     <div class="position-input">
       <input
         type="text"
@@ -18,13 +18,13 @@
         placeholder="Es. Sviluppatore Python, Cameriere, Amministrativo..."
         autocomplete="off"
       />
-      <button id="startBtn">Inizia colloquio</button>
+      <button id="startBtn">Start the interview</button>
     </div>
-    <p>Step è una piattaforma pensata per accompagnarti, passo dopo passo, verso il mondo del lavoro.
- In alto a destra trovi tre sezioni principali, ognuna dedicata a un aspetto diverso del tuo percorso. 
-La prima è una simulazione di ordine di lavoro: un chatbot intelligente ti farà domande, ti guiderà nelle scelte e ti metterà alla prova come se fossi davvero in azienda. Un modo semplice e coinvolgente per capire come affrontare attività reali, senza stress e con la libertà di sbagliare.
-La seconda sezione ti offre una serie di videolezioni pratiche, perfette per imparare nuove competenze in modo leggero. Immagina mini-episodi, spiegati bene e senza parole difficili, che ti insegnano quello che serve davvero – da trucchi utili a strumenti che potrai usare subito.
-Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il tuo curriculum. Qui trovi spiegazioni chiare, suggerimenti e modelli per costruire un CV che ti rappresenti al meglio e sappia catturare l’attenzione di chi lo leggerà.
+    <p>Step is a platform designed to take you, step by step, into the world of work.
+ At the top right you will find three main sections, each dedicated to a different aspect of your journey. 
+The first is a job interview simulation: an intelligent chatbot will ask you questions, guide you in your choices, and test you as if you were actually in the company. A simple and engaging way to understand how to tackle real tasks, stress-free and with the freedom to make mistakes.
+The second section offers you a series of practical video lessons, perfect for learning new skills in a light-hearted way. Imagine mini-episodes, explained well and without difficult words, that teach you what you really need – from useful tricks to tools you can use right away.
+Finally, there is a page dedicated to one of the most important challenges: creating your resume. Here you'll find clear explanations, tips, and templates for building a CV that best represents you and captures the attention of those who read it.
 </p>
   </section>
 
@@ -36,8 +36,8 @@ Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il 
         </div>
         <nav class="nav">
           <a href="#home" class="nav-link">Home</a>
-          <a href="#chat" class="nav-link">Colloquio</a>
-          <a href="#video" class="nav-link">Videolezioni</a>
+          <a href="#chat" class="nav-link">Interview</a>
+          <a href="#video" class="nav-link">VIdeos</a>
           <a href="#note" class="nav-link">Curriculum Vitae</a>
         </nav>
       </div>
@@ -45,20 +45,20 @@ Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il 
 
     <main id="app">
             <section id="home" class="view">
-        <h1>Benvenuto su STEP!</h1>
+        <h1>Welcome on STEP!</h1>
         <p id="home-text">
-          Qui comparirà la posizione scelta per il colloquio.
+          The position chosen for the interview will appear here.
         </p>
         
       </section>
 
             <section id="chat" class="view" hidden>
-        <h1>Simulazione di un colloquio</h1>
+        <h1>Job interview simulator</h1>
         <div class="chat-box">
           <div id="chat-messages" class="messages"></div>
           <div class="input-row">
             <input id="chat-input" type="text" placeholder="Scrivi la tua risposta..." />
-            <button id="send-btn">Invia</button>
+            <button id="send-btn">Send</button>
           </div>
           <div class="controls">
             
@@ -68,12 +68,12 @@ Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il 
       </section>
 
        <section id="video" class="view" hidden>
-  <h1>Videolezioni</h1>
-  <p>Seleziona e guarda i video disponibili:</p>
+  <h1>Videos</h1>
+  <p>Select and watch the available videos</p>
 
   <div class="video-gallery">
         <div class="video-item">
-      <h2>Lezione 1</h2>
+      <h2>Lesson 1</h2>
       <iframe
         src="https://www.youtube.com/embed/uqwu_t_puk0" 
         title="Video YouTube"
@@ -85,7 +85,7 @@ Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il 
       ></iframe>
     </div>
     <div class="video-item">
-      <h2>Lezione 2</h2>
+      <h2>Lesson 2</h2>
       <iframe
         src="https://www.youtube.com/embed/QUdAFDXimmk" 
         title="Video YouTube"
@@ -100,88 +100,88 @@ Infine, c’è una pagina dedicata a una delle sfide più importanti: creare il 
 </section>
 
             <section id="note" class="view" hidden>
-        <h1>Come comporre il tuo Curriculum Vitae</h1>
-        <p>In questa sezione verrai guidato step by step nella creazione del tuo primo curriculum.</p>
-        <h2>1. Intestazione e dati personali</h2>
+        <h1>How to make your Curriculum Vitae</h1>
+        <p>In this section, you will be guided step by step in creating your first Curriculum.</p>
+        <h2>1. Header and personal data</h2>
         <ul>
-          <li>Nome e cognome</li>
-          <li>Telefono</li>
-          <li>Email professionale (es.: nome.cognome@…)</li>
-          <li>Città</li>
-          <li>Linkedin/portfolio (se li hai)</li>
+          <li>Name and surname</li>
+          <li>Tel. number</li>
+          <li>Professional Email (ex.: name.surname@…)</li>
+          <li>City</li>
+          <li>Linkedin/portfolio (if you have it)</li>
         </ul>
-        <h2>2. Profilo personale (breve)</h2>
-        <p>3-4 Righe per descrivere te e il tuo background</p>
+        <h2>2. Personale profile (short)</h2>
+        <p>3-4 Rows to describe yourself and your background</p>
         <ul>
-          <li>Chi sei</li>
-          <li>Cosa sai fare</li>
-          <li>Obiettivi</li>
+          <li>Who you are</li>
+          <li>What are your ability</li>
+          <li>Future goals</li>
         </ul>
-        <h2>3. Esperienze lavorative (se le hai)</h2>
-        <p>Ordine inverso (dalla più recente).
-          Per ogni esperienza:
+        <h2>3. Working experience (if you already have it)</h2>
+        <p>The correct order is from the recently.
+          For all the experiences:
         </p>
         <ul>
-          <li>Titolo della posizione</li>
-          <li>Nome dell'azienda</li>
-          <li>Durata del lavoro</li>
-          <li>Breve descrizione concreta in punti di quello che hai fatto</li>
+          <li>Workpath</li>
+          <li>Name of the company</li>
+          <li>Duration of work</li>
+          <li>Short description divided in keypoints to explain your experience</li>
         </ul>
-         <h2>4. Formazione</h2>
-        <p>Scuola o università, dalla più recente.
-          Comprende:
+         <h2>4. Education</h2>
+        <p>School and university from the recently.
+          It contains:
         </p>
         <ul>
-          <li>Titolo (diploma, laurea)</li>
-          <li>Istituto</li>
-          <li>Data di conseguimento o prevista</li>
-          <li>Valutazione (opzionale)</li>
-          <li>Principali esami o corsi (se presenti)</li>
+          <li>Title (degree, master degree)</li>
+          <li>Istitute</li>
+          <li>Date of ending or expected date</li>
+          <li>Final mark</li>
+          <li>Main exam or course</li>
         </ul>
          <h2>6. Soft Skills</h2>
         <ul>
           <li>Problem solving</li>
-          <li>Comunicazione</li>
-          <li>Lavoro in team</li>
-          <li>Gestione del tempo</li>
+          <li>Communication</li>
+          <li>Teamwork</li>
+          <li>Time management</li>
         </ul>
-        <h2>7. Lingue</h2>
+        <h2>7. Lanugages</h2>
         <ul>
-          <li>Italiano: madrelingua</li>
-          <li>Inglese: B2 (intermedio)</li>
-          <li>Spagnolo: A2 (base)</li>
+          <li>Italian: native speaker</li>
+          <li>English: B2 (middle)</li>
+          <li>Spanish: A2 (base)</li>
           
         </ul>
-        <h2>8. Certificazioni / Corsi (facoltativo)</h2>
+        <h2>8. Certification / Courses (facoltativo)</h2>
         <ul>
           <li>ECDL</li>
           <li>First Certificate</li>
-          <li>Corso di Excel</li>
+          <li>Excel course</li>
         </ul>
-         <h2>9. Progetti personali (super consigliato se sei giovane)</h2>
-        <p>Esempio:
+         <h2>9. Personal project (very important if you are young)</h2>
+        <p>Example:
         </p>
         <ul>
-          <li>Creazione sito web personale</li>
-          <li>Realizzazione video promozionale</li>
+          <li>Developmento of a personal website</li>
+          <li>Creating a professional video</li>
           <li>App in Python</li>
         </ul>
-        <h2>10. Interessi (facoltativo)</h2>
-        <p>Metti solo cose che ti caratterizzano o rilevanti. 
-          Esempio:
+        <h2>10. Hobby (optional)</h2>
+        <p>Just put things that are characteristic or relevant to you. 
+          Example:
         </p>
         <ul>
-          <li>Sport di squadra</li>
-          <li>Volontariato</li>
-          <li>Fotografia</li>
-          <li>Lettura</li>
+          <li>Sports team</li>
+          <li>Volunteering</li>
+          <li>Photography</li>
+          <li>Reading</li>
         </ul>
         
-      </section>
+      </section>    
     </main>
 
     <footer class="app-footer">
-      <small>© 2025 STEP</small>
+      <small>© 2026 STEP</small>
     </footer>
   </div>
 
