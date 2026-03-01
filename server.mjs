@@ -61,7 +61,7 @@ async function chat(messages) {
     return response.text; 
 
   } catch (error) {
-    console.error("Errore durante la chiamata a Gemini:", error);
+    console.error("Error during the Gemini call", error);
     throw error; 
   }
 }
@@ -70,8 +70,8 @@ async function chat(messages) {
 app.post("/api/question", async (req, res) => {
   try {
     const { position, index, answers = [] } = req.body;
-    const system = "Sei un recruiter professionale. Genera UNA sola domanda chiara e pertinente al ruolo. senza inserire mai asterischi";
-    const user = `Ruolo: ${position}. Storico risposte: ${answers.join(" | ") || "nessuno"}. Genera la domanda numero ${index + 1}.`;
+    const system = "You are a professional recruiter. Generate only ONE clear question relevant to the role. Without ever entering asterisks";
+    const user = `Role: ${position}. Historical replies: ${answers.join(" | ") || "nobody"}. Generate the question number ${index + 1}.`;
 
     const text = await chat([
       { role: "system", content: system },
@@ -81,7 +81,7 @@ app.post("/api/question", async (req, res) => {
     res.json({ text });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ text: "Errore nel generare la domanda." });
+    res.status(500).json({ text: "Error generating questions." });
   }
 });
 
@@ -89,8 +89,8 @@ app.post("/api/question", async (req, res) => {
 app.post("/api/reply", async (req, res) => {
   try {
     const { position, userAnswer } = req.body;
-    const system = "Sei un recruiter professionale. Dai un breve feedback (1-2 frasi), neutro e pertinente al ruolo.";
-    const user = `Ruolo: ${position}. Risposta del candidato: "${userAnswer}".`;
+    const system = "You are a professional recruiter. Give short feedback (1-2 sentences), neutral and relevant to the role.";
+    const user = `Role: ${position}. Answer of the candidae: "${userAnswer}".`;
 
     const text = await chat([
       { role: "system", content: system },
@@ -100,7 +100,7 @@ app.post("/api/reply", async (req, res) => {
     res.json({ text });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ text: "Errore nel generare la risposta." });
+    res.status(500).json({ text: "Error generating answer" });
   }
 });
 

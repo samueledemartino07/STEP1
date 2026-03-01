@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startBtn.addEventListener("click", () => {
       position = positionInput?.value?.trim() || "";
       if (!position) {
-        alert("Inserisci la posizione per cui vuoi fare il colloquio.");
+        alert("Insert the workpath for your interview.");
         return;
       }
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const homeText = document.getElementById("home-text");
       if (homeText) {
-        homeText.textContent = `Hai scelto di simulare un colloquio per la posizione: ${position}`;
+        homeText.textContent = `You choose to simulate an interview for: ${position}`;
       }
     });
   }
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       answersHistory = [];
       const chatBox = document.getElementById("chat-messages");
       if (chatBox) chatBox.innerHTML = "";
-      addMessage("bot", "Colloquio resettato. Inserisci una nuova posizione e ricomincia!");
+      addMessage("bot", "Interview restarted. Insert a new workpath and test yourself!");
       showView("#home");
     });
   }
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showView(target);
 
       if (target === "#chat" && !interviewStarted && questionIndex === 0) {
-        addMessage("bot", "Sei pronto a cominciare il colloquio?");
+        addMessage("bot", "Are you ready to start the interview?");
       }
     });
   });
@@ -169,10 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (userAnswer.toLowerCase().includes("si")) {
           interviewStarted = true;
           questionIndex = 0;
-          addMessage("bot", "Perfetto, iniziamo!");
+          addMessage("bot", "Ok, let's start!");
           await getQuestion();
         } else {
-          addMessage("bot", "Va bene, dimmi quando sei pronto.");
+          addMessage("bot", "Ok, text me when you are ready.");
         }
         return;
       }
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ position, userAnswer })
-      }).then(r => r.json()).catch(() => ({ text: "Errore nel generare la risposta." }));
+      }).then(r => r.json()).catch(() => ({ text: "Error generating answer." }));
 
       addMessage("bot", reply.text);
 
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         questionIndex++;
         await getQuestion();
       } else {
-        addMessage("bot", "Dimmi 'si' quando sei pronto a cominciare.");
+        addMessage("bot", "Write 'yes' whe you are ready!.");
       }
     });
   }
@@ -214,7 +214,7 @@ async function getQuestion() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ position, index: questionIndex, answers: answersHistory })
-  }).then(r => r.json()).catch(() => ({ text: "Errore nel generare la domanda." }));
+  }).then(r => r.json()).catch(() => ({ text: "Error generating answer." }));
 
   addMessage("bot", res.text);
 }
